@@ -2,7 +2,7 @@ import MenuAccordion from "./components/MenuAccordion";
 
 export default function Home() {
   return (
-    <div className="font-sans min-h-screen flex flex-col">
+    <div className="font-sans min-h-screen flex flex-col p-4">
       {/* Sticky top navigation (no background colors) */}
       <header className="sticky top-0 z-50">
         <nav className="backdrop-blur supports-[backdrop-filter]:backdrop-blur border-b border-black/[.08] dark:border-white/[.12]">
