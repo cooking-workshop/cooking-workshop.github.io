@@ -26,7 +26,7 @@ export default function Home() {
               <img
                 src="/images/ru-flag.png"
                 alt="Russian flag"
-                className="h-6 w-auto sm:h-8"
+                className="h-6 w-auto sm:h-8 border"
               />
               2025 Online Russian Cooking Workshop
             </h1>
