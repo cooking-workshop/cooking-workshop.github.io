@@ -3,6 +3,13 @@
 import { Accordion } from "./Accordion";
 import { Tabs } from "./Tabs";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type Dish = {
   id: string;
@@ -11,27 +18,24 @@ type Dish = {
   ingredients: string[];
   steps: string[];
   serving: string[];
+  image: string;
 };
 
 const dishes: Dish[] = [
   {
     id: "starter",
     title: "Starter: Bread with Spread",
-    previewText: "Placeholder: Rustic bread with a creamy herb spread.",
-    ingredients: [
-      "Placeholder bread",
-      "Placeholder spread",
-      "Placeholder herbs",
-    ],
-    steps: [
-      "Placeholder: Slice bread",
-      "Placeholder: Mix spread",
-      "Placeholder: Assemble",
-    ],
+    previewText:
+      "A good bread with a tasty spread. Perfect snack to keep everyone satisfied while we cook the main dishes.",
+    ingredients: ["Fresh bread", "Vegetable spread (find in the box"],
+    steps: ["Cut the bread into slices", "Spread the vegetable spread on top"],
     serving: [
-      "Placeholder: Serve on a wooden board",
-      "Placeholder: Garnish with herbs",
+      "/images/starter/starter-serving1.png",
+      "/images/starter/starter-serving2.png",
+      "/images/starter/starter-serving3.png",
+      "/images/starter/starter-serving4.png",
     ],
+    image: "/images/starter/ikra.png",
   },
   {
     id: "olivie",
@@ -45,6 +49,7 @@ const dishes: Dish[] = [
       "Placeholder pickles",
       "Placeholder mayo",
     ],
+    image: "/images/olivie.png",
     steps: [
       "Placeholder: Boil and dice vegetables",
       "Placeholder: Mix with mayo",
@@ -62,6 +67,7 @@ const dishes: Dish[] = [
       "Placeholder onions",
       "Placeholder stock",
     ],
+    image: "/images/grecha.png",
     steps: [
       "Placeholder: Rinse buckwheat",
       "Placeholder: Sauté aromatics",
@@ -83,6 +89,7 @@ const dishes: Dish[] = [
       "Placeholder flour",
       "Placeholder sugar",
     ],
+    image: "/images/syrniki.png",
     steps: [
       "Placeholder: Mix batter",
       "Placeholder: Shape patties",
@@ -102,6 +109,7 @@ const dishes: Dish[] = [
       "Placeholder preserves",
       "Placeholder tea",
     ],
+    image: "/images/gifts.png",
     steps: ["Placeholder: Arrange on platter", "Placeholder: Add labels"],
     serving: [
       "Placeholder: Pair with tea",
@@ -127,35 +135,12 @@ export default function MenuAccordion() {
                 content: (
                   <div className="space-y-3">
                     <div className="aspect-video w-full rounded-md border border-black/[.08] dark:border-white/[.12] overflow-hidden flex items-center justify-center">
-                      {dish.id === "olivie" ? (
-                        <Image
-                          src="/images/olivie.png"
-                          alt="Olivie"
-                          width={1280}
-                          height={720}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : dish.id === "buckwheat" ? (
-                        <Image
-                          src="/images/grecha.png"
-                          alt="Buckwheat with stew"
-                          width={1280}
-                          height={720}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : dish.id === "syrniki" ? (
-                        <Image
-                          src="/images/syrniki.png"
-                          alt="Syrniki"
-                          width={1280}
-                          height={720}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center text-sm opacity-70">
-                          Image Placeholder
-                        </div>
-                      )}
+                      <Image
+                        src={dish.image}
+                        alt={dish.title}
+                        width={400}
+                        height={400}
+                      />
                     </div>
                     <p className="opacity-80">{dish.previewText}</p>
                   </div>
@@ -191,13 +176,40 @@ export default function MenuAccordion() {
                 id: "serving",
                 label: "Serving options",
                 content: (
-                  <ul className="list-disc pl-6 space-y-1">
-                    {dish.serving.map((s, idx) => (
-                      <li key={`${dish.id}-serv-${idx}`} className="opacity-80">
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-3">
+                    {dish.id === "starter" ? (
+                      <Carousel className="w-full max-w-md mx-auto">
+                        <CarouselContent>
+                          {dish.serving.map((imagePath, idx) => (
+                            <CarouselItem key={`${dish.id}-serv-${idx}`}>
+                              <div className="aspect-[4/3] w-full rounded-md border border-black/[.08] dark:border-white/[.12] overflow-hidden">
+                                <Image
+                                  src={imagePath}
+                                  alt={`Serving option ${idx + 1}`}
+                                  width={800}
+                                  height={800}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </Carousel>
+                    ) : (
+                      <ul className="list-disc pl-6 space-y-1">
+                        {dish.serving.map((s, idx) => (
+                          <li
+                            key={`${dish.id}-serv-${idx}`}
+                            className="opacity-80"
+                          >
+                            {s}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 ),
               },
             ]}
