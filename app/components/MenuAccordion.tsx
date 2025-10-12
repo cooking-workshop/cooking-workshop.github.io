@@ -69,14 +69,13 @@ const dishes: Dish[] = [
       "/images/salad/olivie-serving1.png",
       "/images/salad/olivie-serving2.png",
       "/images/salad/olivie-serving3.png",
-      "/images/salad/olivie-serving4.png",
     ],
   },
   {
     id: "buckwheat",
     title: "3. Buckwheat with Meat/Mushroom Stew",
     previewText:
-      "Traditional Russian buckwheat (grecha) served with hearty meat stew",
+      "Traditional Russian buckwheat (grecha) served with hearty meat or mushroom stew",
     ingredients: [
       "Buckwheat groats (1 packet for 2 persons)",
       "Chicken breast (300g, cubed) or mushrooms (300g, diced)",
@@ -92,9 +91,10 @@ const dishes: Dish[] = [
     steps: [
       "Heat oil in a large pan and brown the cubed meat/mushrooms on all sides",
       "Add diced onions and carrots, sauté until onions are translucent",
+      "Slice paprika into small pieces and add to the pan",
       "Add tomato paste and stir for 1-2 minutes until fragrant",
-      "Pour in stock, add paprika, garlic, salt and pepper, bring to a boil",
-      "Reduce heat, cover and simmer for 20 minutes until meat is tender",
+      "Pour in stock, add garlic, salt and pepper, bring to a boil",
+      "Reduce heat, cover and simmer for 20 minutes (for meat) or 15 minutes (for mushrooms)",
       "In a separate pot, cook buckwheat in salted water (1:2 ratio) for 12 minutes",
       "Take the buckwheat out of the packet and place it in the pot",
       "Mix the cooked buckwheat with the meat or mushroom stew",
