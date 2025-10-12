@@ -41,21 +41,28 @@ const dishes: Dish[] = [
     id: "olivie",
     title: "Olivie Salad",
     previewText:
-      "Placeholder: Classic Russian Olivier salad with veggies and mayo.",
+      "Classic Russian Olivier salad with fresh vegetables, eggs, kolbasa and creamy mayonnaise dressing.",
     ingredients: [
-      "Placeholder potatoes",
-      "Placeholder carrots",
-      "Placeholder peas",
-      "Placeholder pickles",
-      "Placeholder mayo",
+      "Kolbasa (Russian ham)  (diced)",
+      "Potatoes (boiled and diced)",
+      "Carrots (boiled and diced)",
+      "Green peas",
+      "Pickles (diced)",
+      "Hard-boiled eggs (diced)",
+      "Mayonnaise",
+      "Salt and pepper to taste",
     ],
-    image: "/images/olivie.png",
+    image: "/images/salad/olivie.png",
     steps: [
-      "Placeholder: Boil and dice vegetables",
-      "Placeholder: Mix with mayo",
-      "Placeholder: Chill",
+      "Boil potatoes and carrots until tender, then dice into small cubes",
+      "Hard-boil eggs, cool, peel and dice",
+      "Dice pickles into small pieces",
+      "Dice kolbasa into small pieces",
+      "Mix all diced ingredients in a large bowl",
+      "Add green peas and season with salt and pepper",
+      "Fold in mayonnaise until well combined",
     ],
-    serving: ["Placeholder: Serve chilled", "Placeholder: Top with dill"],
+    serving: ["/images/salad/olivie.png", "/images/salad/kolbaca.png"],
   },
   {
     id: "buckwheat",
@@ -177,7 +184,7 @@ export default function MenuAccordion() {
                 label: "Serving options",
                 content: (
                   <div className="space-y-3">
-                    {dish.id === "starter" ? (
+                    {dish.id === "starter" || dish.id === "olivie" ? (
                       <Carousel className="w-full max-w-md mx-auto">
                         <CarouselContent>
                           {dish.serving.map((imagePath, idx) => (
