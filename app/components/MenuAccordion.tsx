@@ -108,22 +108,33 @@ const dishes: Dish[] = [
   {
     id: "syrniki",
     title: "Cottage Cheese Pancakes (Syrniki)",
-    previewText: "Placeholder: Golden syrniki with a soft, creamy center.",
+    previewText:
+      "Traditional Russian cottage cheese pancakes with a soft, creamy center and golden crispy exterior. Perfect sweet ending to your meal.",
     ingredients: [
-      "Placeholder cottage cheese",
-      "Placeholder eggs",
-      "Placeholder flour",
-      "Placeholder sugar",
+      "Cottage cheese (tvorog) - 400g (find it in the box)",
+      "Sgushenka - 1 can (find it in the box)",
+      "Eggs - 1 large",
+      "All-purpose flour - 4-5 tbsp",
+      "Sugar - 2-3 tbsp",
+      "Vanilla extract - 1 tsp",
+      "Vegetable oil for frying",
     ],
-    image: "/images/syrniki.png",
+    image: "/images/dessert/tvorog.jpeg",
     steps: [
-      "Placeholder: Mix batter",
-      "Placeholder: Shape patties",
-      "Placeholder: Pan-fry until golden",
+      "Place cottage cheese in a large bowl and mash with a fork until smooth",
+      "Add eggs, sugar, vanilla extract. Mix well",
+      "Gradually add flour, mixing until you get a soft, slightly sticky dough",
+      "Dust your hands with flour and shape the mixture into small patties (about 4cm wide)",
+      "Heat vegetable oil in a large pan over medium heat",
+      "Carefully place the patties in the hot oil and fry for 2-3 minutes on each side until golden brown",
+      "Serve warm with sgushenka (look serving options for inspiration)",
     ],
     serving: [
-      "Placeholder: Serve with jam",
-      "Placeholder: Dust with powdered sugar",
+      // "/images/dessert/sgushenka.png",
+      "/images/dessert/syrniki-serving1.png",
+      "/images/dessert/syrniki-serving2.png",
+      "/images/dessert/syrniki-serving3.png",
+      "/images/dessert/syrniki-serving4.png",
     ],
   },
   {
@@ -205,7 +216,8 @@ export default function MenuAccordion() {
                   <div className="space-y-3">
                     {dish.id === "starter" ||
                     dish.id === "olivie" ||
-                    dish.id === "buckwheat" ? (
+                    dish.id === "buckwheat" ||
+                    dish.id === "syrniki" ? (
                       <Carousel className="w-full max-w-md mx-auto">
                         <CarouselContent>
                           {dish.serving.map((imagePath, idx) => (
