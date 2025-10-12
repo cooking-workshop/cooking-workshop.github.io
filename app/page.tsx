@@ -42,7 +42,8 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold">Menu</h2>
             <p className="mt-3 opacity-80">
-              Five workshop dishes. Expand each to explore details.
+              Traditional Russian cooking workshop dishes. Expand each to
+              explore details.
             </p>
             <MenuAccordion />
           </div>

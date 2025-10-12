@@ -24,7 +24,7 @@ type Dish = {
 const dishes: Dish[] = [
   {
     id: "starter",
-    title: "Starter: Bread with Spread",
+    title: "1. Starter: Bread with Spread",
     previewText:
       "A good bread with a tasty spread. Perfect snack to keep everyone satisfied while we cook the main dishes.",
     ingredients: ["Fresh bread", "Vegetable spread (find in the box"],
@@ -39,7 +39,7 @@ const dishes: Dish[] = [
   },
   {
     id: "olivie",
-    title: "Olivie Salad",
+    title: "2. Olivie Salad",
     previewText:
       "Classic Russian Olivier salad with fresh vegetables, eggs, kolbasa and creamy mayonnaise dressing.",
     ingredients: [
@@ -74,7 +74,7 @@ const dishes: Dish[] = [
   },
   {
     id: "buckwheat",
-    title: "Buckwheat with Meat/Mushroom Stew",
+    title: "3. Buckwheat with Meat/Mushroom Stew",
     previewText:
       "Traditional Russian buckwheat (grecha) served with hearty meat stew",
     ingredients: [
@@ -107,7 +107,7 @@ const dishes: Dish[] = [
   },
   {
     id: "syrniki",
-    title: "Cottage Cheese Pancakes (Syrniki)",
+    title: "4. Cottage Cheese Pancakes (Syrniki)",
     previewText:
       "Traditional Russian cottage cheese pancakes with a soft, creamy center and golden crispy exterior. Perfect sweet ending to your meal.",
     ingredients: [
