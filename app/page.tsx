@@ -1,4 +1,5 @@
 import MenuAccordion from "./components/MenuAccordion";
+import GiftsAccordion from "./components/GiftsAccordion";
 
 export default function Home() {
   return (
@@ -44,6 +45,17 @@ export default function Home() {
               Five workshop dishes. Expand each to explore details.
             </p>
             <MenuAccordion />
+          </div>
+        </section>
+
+        {/* Gifts Section */}
+        <section id="gifts" className="mt-16">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold">Gifts</h2>
+            <p className="mt-3 opacity-80">
+              Special Russian treats and beverages. Click to explore each gift.
+            </p>
+            <GiftsAccordion />
           </div>
         </section>
       </main>

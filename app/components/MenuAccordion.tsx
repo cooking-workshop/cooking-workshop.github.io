@@ -137,22 +137,6 @@ const dishes: Dish[] = [
       "/images/dessert/syrniki-serving4.png",
     ],
   },
-  {
-    id: "gifts",
-    title: "Other Gifts",
-    previewText: "Placeholder: Sweet and savory extras for the table.",
-    ingredients: [
-      "Placeholder chocolates",
-      "Placeholder preserves",
-      "Placeholder tea",
-    ],
-    image: "/images/gifts.png",
-    steps: ["Placeholder: Arrange on platter", "Placeholder: Add labels"],
-    serving: [
-      "Placeholder: Pair with tea",
-      "Placeholder: Offer as take-home gifts",
-    ],
-  },
 ];
 
 export default function MenuAccordion() {
@@ -171,7 +155,7 @@ export default function MenuAccordion() {
                 label: "Preview",
                 content: (
                   <div className="space-y-3">
-                    <div className="aspect-video w-full rounded-md border border-black/[.08] dark:border-white/[.12] overflow-hidden flex items-center justify-center">
+                    <div className="overflow-hidden flex items-center justify-center">
                       <Image
                         src={dish.image}
                         alt={dish.title}
