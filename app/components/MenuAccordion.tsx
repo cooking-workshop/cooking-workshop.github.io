@@ -43,13 +43,14 @@ const dishes: Dish[] = [
     previewText:
       "Classic Russian Olivier salad with fresh vegetables, eggs, kolbasa and creamy mayonnaise dressing.",
     ingredients: [
-      "Kolbasa (Russian ham)  (diced)",
-      "Potatoes (boiled and diced)",
-      "Carrots (boiled and diced)",
-      "Green peas",
-      "Pickles (diced)",
-      "Hard-boiled eggs (diced)",
-      "Mayonnaise",
+      "Kolbasa (Russian ham, find it in the box)",
+      "Potatoes (2 large, find it in the box)",
+      "Carrots (2 medium, find it in the box)",
+      "Pickles (1 can, find it in the box)",
+      "Green peas (1 can, find it in the box)",
+      "Mayonnaise (find it in the box)",
+      "Eggs (4 pieces)",
+      "Green onions (1 pieces)",
       "Salt and pepper to taste",
     ],
     image: "/images/salad/olivie.png",
@@ -61,29 +62,47 @@ const dishes: Dish[] = [
       "Mix all diced ingredients in a large bowl",
       "Add green peas and season with salt and pepper",
       "Fold in mayonnaise until well combined",
+      "Garnish with green onions",
     ],
-    serving: ["/images/salad/olivie.png", "/images/salad/kolbaca.png"],
+    serving: [
+      "/images/salad/kolbaca.png",
+      "/images/salad/olivie-serving1.png",
+      "/images/salad/olivie-serving2.png",
+      "/images/salad/olivie-serving3.png",
+      "/images/salad/olivie-serving4.png",
+    ],
   },
   {
     id: "buckwheat",
-    title: "Buckwheat with Stew",
-    previewText: "Placeholder: Hearty buckwheat with tender meat stew.",
+    title: "Buckwheat with Meat/Mushroom Stew",
+    previewText:
+      "Traditional Russian buckwheat (grecha) served with hearty meat stew",
     ingredients: [
-      "Placeholder buckwheat",
-      "Placeholder stew meat",
-      "Placeholder onions",
-      "Placeholder stock",
+      "Buckwheat groats (1 packet for 2 persons)",
+      "Chicken breast (300g, cubed) or mushrooms (300g, diced)",
+      "Onions (1 large, diced)",
+      "Carrots (2 medium, diced)",
+      "Paprika (1 medium/large, diced)",
+      "Garlic (2 cloves, minced)",
+      "Tomato paste (2 tbsp)",
+      "Salt and black pepper to taste",
+      "Vegetable oil for cooking",
     ],
-    image: "/images/grecha.png",
+    image: "/images/main/grecha-box.jpeg",
     steps: [
-      "Placeholder: Rinse buckwheat",
-      "Placeholder: Sauté aromatics",
-      "Placeholder: Simmer stew",
-      "Placeholder: Steam buckwheat",
+      "Heat oil in a large pan and brown the cubed meat/mushrooms on all sides",
+      "Add diced onions and carrots, sauté until onions are translucent",
+      "Add tomato paste and stir for 1-2 minutes until fragrant",
+      "Pour in stock, add paprika, garlic, salt and pepper, bring to a boil",
+      "Reduce heat, cover and simmer for 20 minutes until meat is tender",
+      "In a separate pot, cook buckwheat in salted water (1:2 ratio) for 12 minutes",
+      "Take the buckwheat out of the packet and place it in the pot",
+      "Mix the cooked buckwheat with the meat or mushroom stew",
     ],
     serving: [
-      "Placeholder: Serve hot",
-      "Placeholder: Add a dollop of sour cream",
+      "/images/main/grecha-mushrooms1.png",
+      "/images/main/grecha-mushrooms2.png",
+      "/images/main/grecha-chicken.png",
     ],
   },
   {
@@ -184,7 +203,9 @@ export default function MenuAccordion() {
                 label: "Serving options",
                 content: (
                   <div className="space-y-3">
-                    {dish.id === "starter" || dish.id === "olivie" ? (
+                    {dish.id === "starter" ||
+                    dish.id === "olivie" ||
+                    dish.id === "buckwheat" ? (
                       <Carousel className="w-full max-w-md mx-auto">
                         <CarouselContent>
                           {dish.serving.map((imagePath, idx) => (
