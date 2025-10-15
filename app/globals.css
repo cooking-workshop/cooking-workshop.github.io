@@ -119,3 +119,33 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Motion utilities for background */
+@keyframes slow-pan {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2%, -1%, 0) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+@keyframes float-slow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-slow-pan {
+  animation: slow-pan 18s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
