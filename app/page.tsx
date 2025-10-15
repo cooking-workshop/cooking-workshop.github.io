@@ -14,6 +14,14 @@ export default function Home() {
             >
               2025 Xebia Data Cooking Workshop Series
             </a>
+            <a
+              href="/online-russian-cooking-workshop.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md"
+            >
+              Download recipe (PDF)
+            </a>
           </div>
         </nav>
       </header>
